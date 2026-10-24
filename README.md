@@ -120,17 +120,11 @@ If a file has a different name (for example, `student_dashbord.html`), either re
 
 ## Deploying online
 
-GitHub stores the source code; it does not run a Flask backend through GitHub Pages. To deploy the Flask app, use a Python-compatible hosting service such as Render and connect your GitHub repository.
-
 Typical Render settings:
 
 - **Build command:** `pip install -r requirements.txt`
 - **Start command:** `gunicorn app:app`
 - **Environment variable:** `FLASK_SECRET_KEY` set to a new secure value
-
-### SQLite deployment note
-
-The app currently uses a local SQLite file (`college_faq.db`). On many cloud hosts, local files may be temporary and can be lost during redeploys or restarts. Use persistent storage or a managed database for production, and do not deploy real student records in a public repository.
 
 ## Troubleshooting
 
