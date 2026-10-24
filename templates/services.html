@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Explore Student Services</h1>
+<p>Discover facilities and support that may be available to students.</p>
+
+<div class="course-list">
+
+    <details class="course-card">
+        <summary>Library Services</summary>
+        <div class="course-info">
+            <p>Students may use the library to access textbooks, reference books and study materials.</p>
+            <p>Library rules, borrowing limits and opening hours depend on the college.</p>
+            <p>Contact the librarian for membership and book availability.</p>
+        </div>
+    </details>
+
+    <details class="course-card">
+        <summary>Computer Lab and Internet</summary>
+        <div class="course-info">
+            <p>Computer labs may provide access to computers, software and internet facilities.</p>
+            <p>Use college equipment responsibly and follow lab timings.</p>
+            <p>Ask the lab coordinator about available facilities and access rules.</p>
+        </div>
+    </details>
+
+    <details class="course-card">
+        <summary>Student Helpdesk</summary>
+        <div class="course-info">
+            <p>The student helpdesk can guide students toward the appropriate college department.</p>
+            <p>You may ask about academic procedures, forms, schedules and general student queries.</p>
+            <p>For official decisions, contact the relevant department directly.</p>
+        </div>
+    </details>
+
+    <details class="course-card">
+        <summary>Certificates and Documents</summary>
+        <div class="course-info">
+            <p>Students may need to request bonafide certificates, transcripts or other academic documents.</p>
+            <p>Application forms, processing times and fees depend on college policy.</p>
+            <p>Contact the administration office for the correct procedure.</p>
+        </div>
+    </details>
+
+    <details class="course-card">
+        <summary>Career Guidance and Placement</summary>
+        <div class="course-info">
+            <p>Career services may provide resume guidance, interview preparation and career counselling.</p>
+            <p>Placement activities and internship opportunities vary by college and course.</p>
+            <p>Contact the placement cell for current opportunities and eligibility requirements.</p>
+        </div>
+    </details>
+
+    <details class="course-card">
+        <summary>Sports and Student Activities</summary>
+        <div class="course-info">
+            <p>Student activities may include sports, cultural events, clubs and competitions.</p>
+            <p>Check college announcements for schedules, registration and participation rules.</p>
+        </div>
+    </details>
+
+</div>
+
+</body>
+</html>

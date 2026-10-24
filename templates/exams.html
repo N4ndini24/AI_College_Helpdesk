@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>Exams Information</h1>
+<p>Find useful information about examinations and results.</p>
+
+<div class="course-list">
+
+    <details class="course-card">
+        <summary>Exam Timetable</summary>
+        <div class="course-info">
+            <p>The exam timetable contains exam dates, times and subject details.</p>
+            <p>Check the official college or university notice for the latest timetable.</p>
+            <p>Verify your course, semester and subject codes before the exam.</p>
+        </div>
+    </details>
+
+    <details class="course-card">
+        <summary>Hall Ticket / Admit Card</summary>
+        <div class="course-info">
+            <p>Follow your college's instructions to obtain your hall ticket.</p>
+            <p>Check your name, roll number, subjects, exam centre and exam dates.</p>
+            <p>Contact the examination department if you find an error.</p>
+        </div>
+    </details>
+
+    <details class="course-card">
+        <summary>Examination Rules</summary>
+        <div class="course-info">
+            <p>Arrive at the examination centre before the reporting time.</p>
+            <p>Carry your hall ticket and permitted identification.</p>
+            <p>Bring only items allowed by the examination rules.</p>
+            <p>Follow the invigilator's instructions throughout the examination.</p>
+        </div>
+    </details>
+
+    <details class="course-card">
+        <summary>Results and Mark Sheets</summary>
+        <div class="course-info">
+            <p>Check results through the official college or university result portal.</p>
+            <p>Keep your roll number or registration details ready if required.</p>
+            <p>Contact the examination department if your result is missing or incorrect.</p>
+        </div>
+    </details>
+
+    <details class="course-card">
+        <summary>Revaluation and Backlog Exams</summary>
+        <div class="course-info">
+            <p>Colleges may provide revaluation, photocopy or answer-sheet verification options.</p>
+            <p>Backlog or supplementary exam rules depend on the university.</p>
+            <p>Check eligibility, application deadlines and fees in the official notification.</p>
+        </div>
+    </details>
+
+</div>
+
+</body>
+</html>
