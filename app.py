@@ -1,4 +1,3 @@
-
 import os
 import re
 import sqlite3
@@ -21,11 +20,6 @@ from werkzeug.security import (
     check_password_hash,
 )
 
-
-# --------------------------------------------------
-# Configuration
-# --------------------------------------------------
-
 BASE_DIR = Path(__file__).resolve().parent
 DB_PATH = BASE_DIR / "college_faq.db"
 
@@ -40,10 +34,7 @@ if not app.secret_key:
         "Please set FLASK_SECRET_KEY in your .env file."
     )
 
-
-# --------------------------------------------------
 # Login Required Decorator
-# --------------------------------------------------
 
 def login_required(view):
     @wraps(view)
@@ -58,10 +49,7 @@ def login_required(view):
 
     return wrapped_view
 
-
-# --------------------------------------------------
 # Database Helpers
-# --------------------------------------------------
 
 def get_db_connection():
     conn = sqlite3.connect(str(DB_PATH))
@@ -129,22 +117,12 @@ def get_answer(question):
     )
 
 
-# Create students table at startup.
 init_student_db()
 
-
-# --------------------------------------------------
-# Home Page
-# --------------------------------------------------
 
 @app.route("/")
 def home():
     return render_template("index.html")
-
-
-# --------------------------------------------------
-# Courses Page
-# --------------------------------------------------
 
 @app.route("/courses")
 @login_required
@@ -167,11 +145,6 @@ def courses():
     )
 
 
-# --------------------------------------------------
-# Admissions Page
-# Uses admissions.html
-# --------------------------------------------------
-
 @app.route("/admissions")
 @login_required
 def admissions():
@@ -180,11 +153,6 @@ def admissions():
         title="Admissions",
     )
 
-
-# --------------------------------------------------
-# Exams Page
-# Uses exams.html
-# --------------------------------------------------
 
 @app.route("/exams")
 @login_required
@@ -195,11 +163,6 @@ def exams():
     )
 
 
-# --------------------------------------------------
-# Student Services Page
-# Uses services.html
-# --------------------------------------------------
-
 @app.route("/services")
 @login_required
 def services():
@@ -208,11 +171,6 @@ def services():
         title="Student Services",
     )
 
-
-# --------------------------------------------------
-# Scholarship Page
-# Uses scholarship.html
-# --------------------------------------------------
 
 @app.route("/scholarship")
 @login_required
@@ -223,19 +181,11 @@ def scholarship():
     )
 
 
-# --------------------------------------------------
-# Chatbot Page
-# --------------------------------------------------
 
 @app.route("/chatbot")
 @login_required
 def chatbot():
     return render_template("chatbot.html")
-
-
-# --------------------------------------------------
-# Chatbot API
-# --------------------------------------------------
 
 @app.route("/ask", methods=["POST"])
 @login_required
@@ -251,11 +201,7 @@ def ask():
     answer = get_answer(question)
 
     return jsonify({"answer": answer})
-
-
-# --------------------------------------------------
-# Admin FAQ Page
-# --------------------------------------------------
+    
 
 @app.route("/admin", methods=["GET", "POST"])
 @login_required
@@ -306,11 +252,7 @@ def admin():
         "admin.html",
         message=message,
     )
-
-
-# --------------------------------------------------
-# Student Registration
-# --------------------------------------------------
+    
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -373,10 +315,6 @@ def register():
     return render_template("register.html")
 
 
-# --------------------------------------------------
-# Student Login
-# --------------------------------------------------
-
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -423,10 +361,6 @@ def login():
     return render_template("login.html")
 
 
-# --------------------------------------------------
-# Student Dashboard
-# --------------------------------------------------
-
 @app.route("/student-dashboard")
 @login_required
 def student_dashboard():
@@ -436,21 +370,13 @@ def student_dashboard():
     )
 
 
-# --------------------------------------------------
-# Logout
-# --------------------------------------------------
-
 @app.route("/logout", methods=["GET", "POST"])
 def logout():
     session.clear()
     flash("You have been logged out.")
 
     return redirect(url_for("login"))
-
-
-# --------------------------------------------------
-# Run Application
-# --------------------------------------------------
+    
 
 if __name__ == "__main__":
     app.run(debug=True)
