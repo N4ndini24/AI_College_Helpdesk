@@ -22,8 +22,8 @@ Student Helpdesk is a Flask-based web application that helps students access col
 If the project is on GitHub:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/AI_College_Helpdesk.git
-cd AI_College_Helpdesk
+git clone https://github.com/YOUR_USERNAME/Student_Helpdesk.git
+cd Student_Helpdesk
 ```
 
 Or open the project folder you already have on your computer.
